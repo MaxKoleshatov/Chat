@@ -1,0 +1,14 @@
+= turbo_stream_from @room
+
+= turbo_frame_tag :messages do
+  p
+    = render @messages
+
+= form_with model: [@new_message] do |form| 
+  p
+    = form.label :body 
+    = form.text_field :body
+  p
+    = form.hidden_field :room_id, value: @room.id
+  p     
+    = form.submit 'Отправить сообщение'

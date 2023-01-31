@@ -1,0 +1,12 @@
+= turbo_stream_from :rooms
+
+= turbo_frame_tag :rooms do
+  p
+    = render @rooms
+
+= form_with model: [@new_room] do |form| 
+  p
+    = form.label :title 
+    = form.text_field :title
+  p     
+    = form.submit 'Создать чат'
